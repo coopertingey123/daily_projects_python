@@ -54,3 +54,14 @@ def number_of_heights(heights):
   return print(int(height_sum/i))
 
 number_of_heights(heights)
+
+scores = [100, 122, 111, 122, 121, 106, 134]
+
+def highest_score(list_of_scores):
+  highest_score = list_of_scores[0]
+  for score in list_of_scores:
+    if score > highest_score:
+      highest_score = score
+  return print(highest_score)
+
+highest_score(scores)
