@@ -40,6 +40,17 @@ def coin_toss(set):
     else:
       return print("Thanks for playing.")
 
-
-  
 coin_toss(options)
+
+
+heights = [100, 122, 111, 122, 121, 106]
+
+def number_of_heights(heights):
+  i = 0
+  height_sum = 0
+  for height in heights:
+    i = i + 1
+    height_sum = height + height_sum
+  return print(int(height_sum/i))
+
+number_of_heights(heights)
