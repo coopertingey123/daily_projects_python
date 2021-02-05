@@ -65,3 +65,17 @@ def highest_score(list_of_scores):
   return print(highest_score)
 
 highest_score(scores)
+
+def fizzbuzz(max_number):
+  list_of_nums = range(0, max_number)
+  for num in list_of_nums:
+    if num % 3 == 0 and num % 5 == 0:
+      print("fizzbuzz")
+    elif num % 5 == 0:
+      print("buzz")
+    elif num % 3 == 0:
+      print("fizz")
+    elif num != 0:
+      print(num)
+      
+fizzbuzz(100)
