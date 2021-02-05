@@ -79,3 +79,45 @@ def fizzbuzz(max_number):
       print(num)
       
 fizzbuzz(100)
+
+#Password Generator Project
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+def random_letter(number_of_letters):
+  i = 0
+  password_letters = []
+  while i < number_of_letters:
+    i = i + 1
+    password_letters.append(random.choice(letters))
+  return password_letters
+
+def random_number(number_of_numbers):
+  i = 0
+  password_numbers = []
+  while i < number_of_numbers:
+    i = i + 1
+    password_numbers.append(random.choice(numbers))
+  return password_numbers
+
+def random_symbol(number_of_symbols):
+  i = 0
+  password_symbols = []
+  while i < number_of_symbols:
+    i = i + 1
+    password_symbols.append(random.choice(symbols))
+  return password_symbols
+
+print("Welcome to the PyPassword Generator!")
+nr_letters= int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+letters = random_letter(nr_letters)
+symbols = random_symbol(nr_symbols)
+numbers = random_number(nr_numbers)
+password = (letters + symbols + numbers)
+new_password = ''.join(password)
+print(f'Your password is {new_password}.')
