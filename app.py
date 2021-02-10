@@ -121,3 +121,19 @@ numbers = random_number(nr_numbers)
 password = (letters + symbols + numbers)
 new_password = ''.join(password)
 print(f'Your password is {new_password}.')
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    move()
+
+while at_goal() != True:
+    if front_is_clear() ==True:
+        move()
+    elif right_is_clear() ==True:
+        turn_right()
+    elif wall_on_right() ==True:
+        turn_left()
+        if front_is_clear() ==True:
+            move()
