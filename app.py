@@ -137,3 +137,39 @@ while at_goal() != True:
         turn_left()
         if front_is_clear() ==True:
             move()
+
+import random
+from hangman_words import word_list
+from hangman_art import logo
+from hangman_art import stages
+
+def return_word(list_of_words):
+  end_game = False
+  random_word = random.choice(word_list) 
+  print(random_word)
+  display = []
+  lives = 6
+  word_length = len(random_word)
+  print(logo)
+  for _ in range(word_length):
+      display += "_"
+  while not end_game:
+    letter_choice = input("Select a letter: ")
+    for position in range(word_length):
+      letter = random_word[position]
+      if letter == letter_choice:
+        display[position] = letter
+        print(display)
+        if "_" not in display:
+          end_game = True
+          print("You win.")
+    if letter_choice not in random_word:
+      lives = lives - 1
+      print("That letter is not in the word. You lost a life. Try again!")
+      if lives == 0:
+        end_game = True
+        print("You lose")
+    print(stages[lives])
+
+
+return_word(word_list)
