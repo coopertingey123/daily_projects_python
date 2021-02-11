@@ -457,3 +457,13 @@ def return_word(list_of_words):
 
 
 return_word(word_list)
+
+def my_function(first_name, last_name):
+  name = first_name + " " + last_name
+  print(f"{first_name} {last_name} is your name.")
+  print(f"Hello {name}.")
+
+first_name = input("First name: ")
+last_name = input("Last name: ")
+
+my_function(first_name, last_name)
