@@ -467,3 +467,45 @@ first_name = input("First name: ")
 last_name = input("Last name: ")
 
 my_function(first_name, last_name)
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+def encrypt(text, shift):
+  new_text = ""
+  for letter in text:
+    letter_index = alphabet.index(letter)
+    new_letter = alphabet[letter_index + shift]
+    new_text= new_text + new_letter
+  return print(new_text)
+
+def decrypt(text, shift):
+  original_text = []
+  for letter in text:
+    letter_index = alphabet.index(letter)
+    old_letter = alphabet[letter_index - shift]
+    original_text = original_text + old_letter
+  return print(str(original_text))
+
+if direction == "encode":
+  encrypt(text, shift)
+elif direction == "decode":
+  decrypt(text, shift)
+
+
+function list(names){
+  let str = '';
+  if (names.length !== 0) {
+    let last = names.pop();
+    str = names.map( (val, i, arr) => {
+      if (i !== arr[arr.length - 1]) {
+        return val.name;
+      }
+    }).join(', ')
+     
+    str += str !== '' ? ' & ' + last.name : last.name;
+  }
+   
+  return str;
+}
