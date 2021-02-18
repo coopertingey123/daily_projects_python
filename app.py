@@ -509,3 +509,29 @@ function list(names){
    
   return str;
 }
+
+from replit import clear
+
+bids = {}
+bidding_done = False
+
+def find_highest_bidder(list_of_bids):
+  highest_bid = 0
+  winner = ""
+  for bidder in list_of_bids:
+    bid_amount = list_of_bids[bidder]
+    if bid_amount > highest_bid:
+      highest_bid = bid_amount
+      winner = bidder
+  print(f"The winner is {winner} with a bid of ${highest_bid}")
+
+while not bidding_done:
+  name = input("What is your name?")
+  price = int(input("What is your bid?: $"))
+  bids[name] = price
+  should_continue = input ("Are there any other bidders? Type 'yes' or 'no'.\n")
+  if should_continue == "no":
+    bidding_done = True
+    find_highest_bidder(bids)
+  elif should_continue == "yes":
+    clear()
