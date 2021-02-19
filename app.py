@@ -535,3 +535,39 @@ while not bidding_done:
     find_highest_bidder(bids)
   elif should_continue == "yes":
     clear()
+
+def add(num1, num2):
+  return num1 + num2
+
+def subtract(num1, num2):
+  return num1 - num2
+
+def multiply(num1, num2):
+  return num1 * num2
+
+def divide(num1, num2):
+  return num1/num2
+
+operations = {
+  "+": add,
+  "-": subtract,
+  "*": multiply,
+  "/": divide
+}
+
+num1 = int(input("What's the first number?: "))
+num2 = int(input("What's the second number?: "))
+
+for operation in operations:
+  print(operation)
+  
+
+chosen_operation = input("Pick an operation listed above: ")
+
+def calculate(num1, num2, calculation):
+  function = operations[f"{calculation}"]
+  return function(num1, num2)
+
+answer = calculate(num1, num2, chosen_operation)
+
+print(f"{num1} {chosen_operation} {num2} = {answer}")
